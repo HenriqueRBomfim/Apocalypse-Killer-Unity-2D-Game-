@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -7,8 +8,6 @@ public class PlayerMovement : MonoBehaviour
     AudioSource audioSource;
     [SerializeField]
     public float speed = 5.0f;
-    [SerializeField]
-    private float rotationSpeed;
     private Vector2 movementInput;
     private Vector2 smoothedMovementInput;
     private Vector2 movementInputSmoothVelocity;
@@ -30,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         SetPlayerVelocity();
-        RotateInDirectionOfInput();
+        RotateTowardsMouse();
     }
 
     private void SetPlayerVelocity()
@@ -40,33 +39,35 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = smoothedMovementInput * speed;
     }
 
+    private void RotateTowardsMouse()
+    {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = (mousePosition - transform.position).normalized;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;
+    }
+
     public void StopMovement()
     {
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
     }
 
-    private void RotateInDirectionOfInput()
-    {
-        if (movementInput != Vector2.zero)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(transform.forward, smoothedMovementInput);
-            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-            
-            rb.MoveRotation(rotation);
-        }
-        else
-        {
-            rb.angularVelocity = 0f;
-        }
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Coletável")
+        if (other.CompareTag("Coletável"))
         {
+            HealthController healthController = GetComponent<HealthController>();
+            if (healthController != null)
+            {
+                healthController.Heal(10f);
+            }
+
             Destroy(other.gameObject);
             audioSource.Play();
         }
     }
+
+
 }
