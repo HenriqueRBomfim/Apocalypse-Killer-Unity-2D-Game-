@@ -22,7 +22,7 @@ public class MedkitSpawner : MonoBehaviour
     private float spawnRadius = 4f;
 
     private int currentMedkitCount = 0;
-    private const int maxMedkits = 2; // Limite de medkits simultâneos
+    private const int maxMedkits = 2;
 
     void Awake()
     {
@@ -54,7 +54,6 @@ public class MedkitSpawner : MonoBehaviour
 
         GameObject medkit = Instantiate(medkitPrefab, spawnPosition, Quaternion.identity);
         
-        // Adiciona um script para chamar o método quando o medkit for destruído
         medkit.AddComponent<Medkit>().SetSpawner(this);
         
         currentMedkitCount++;
@@ -71,7 +70,6 @@ public class MedkitSpawner : MonoBehaviour
         maximumSpawnTime = Mathf.Max(maximumSpawnTime * spawnAccelerationRate, minimumLimit);
     }
 
-    // Método chamado para reduzir o contador de medkits
     public void MedkitCollected()
     {
         currentMedkitCount = Mathf.Max(0, currentMedkitCount - 1);

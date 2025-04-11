@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     private float elapsedTime;
 
     private int currentEnemyCount = 0;
-    private const int maxEnemies = 10; // Máximo de 10 zumbis por spawner
+    private const int maxEnemies = 10;
 
     void Awake()
     {
@@ -50,7 +50,6 @@ public class EnemySpawner : MonoBehaviour
     {
         GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         
-        // Adiciona um script ao inimigo para reduzir o contador quando morrer
         enemy.AddComponent<Enemy>().SetSpawner(this);
 
         currentEnemyCount++;
@@ -67,7 +66,6 @@ public class EnemySpawner : MonoBehaviour
         maximumSpawnTime = Mathf.Max(maximumSpawnTime * spawnAccelerationRate, minimumLimit);
     }
 
-    // Método chamado quando um inimigo morre
     public void EnemyDied()
     {
         currentEnemyCount = Mathf.Max(0, currentEnemyCount - 1);
