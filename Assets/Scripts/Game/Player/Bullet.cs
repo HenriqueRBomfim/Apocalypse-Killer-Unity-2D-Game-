@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
     private Camera _camera;
 
     private void Awake()
@@ -19,6 +18,8 @@ public class Bullet : MonoBehaviour
         if (collision.GetComponent<EnemyMovement>() != null)
         {
             Debug.Log("Hit enemy!");
+            var enemyHealthController = collision.GetComponent<HealthController>();
+            enemyHealthController.TakeDamage(1);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
@@ -26,6 +27,7 @@ public class Bullet : MonoBehaviour
         {
             Debug.Log("Hit wall!");
             Destroy(gameObject);
+            Destroy(collision.gameObject);
         }
     }
 

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3003688264065300424}
   - component: {fileID: 6740364719284164692}
   - component: {fileID: 5020399212716663181}
+  - component: {fileID: 7102222366252390780}
+  - component: {fileID: 5907761052368660772}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -76,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c3efe916355934d92ab6a15db965eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
   rotationSpeed: 300
 --- !u!114 &3003688264065300424
 MonoBehaviour:
@@ -126,7 +128,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.44
+  m_Radius: 0.45
 --- !u!114 &5020399212716663181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +141,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b61cbcf073d284fb93d10da69b9106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 0
+  damageAmount: 10
+--- !u!114 &7102222366252390780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794296929758223268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e82fb39e4e0f24d9a35b893a8f04de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killScore: 10
+--- !u!114 &5907761052368660772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794296929758223268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8976cf6d176eab446bc8eb27d4a4f9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 1
+  maxHealth: 1
+  OnDied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7102222366252390780}
+        m_TargetAssemblyTypeName: EnemyScoreAllocator, Assembly-CSharp
+        m_MethodName: AllocateScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6703894115916597555
 GameObject:
   m_ObjectHideFlags: 0
