@@ -16,14 +16,25 @@ public class HealthController : MonoBehaviour
         get { return currentHealth / maxHealth; }
     }
 
+    public ScoreController scoreController;
+    public TimeController timeController;
+
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
-        
-        // Apenas adiciona o listener se o objeto tiver PlayerMovement
+
         if (playerMovement != null)
         {
             OnDied.AddListener(playerMovement.StopMovement);
+        }
+
+        if (scoreController == null)
+        {
+            scoreController = FindFirstObjectByType<ScoreController>();
+        }
+        if (timeController == null)
+        {
+            timeController = FindFirstObjectByType<TimeController>();
         }
     }
 
@@ -53,6 +64,8 @@ public class HealthController : MonoBehaviour
 
             if (gameObject.CompareTag("Player"))
             {
+                GameManager.Instance.FinalScore = scoreController.Score;
+                GameManager.Instance.FinalTime = timeController.timeElapsed;
                 SceneManager.LoadScene(2);
             }
         }

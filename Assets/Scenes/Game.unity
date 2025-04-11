@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 408354168}
   m_Layer: 0
   m_Name: Muro_0 (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -694,7 +694,7 @@ GameObject:
   - component: {fileID: 495307157}
   m_Layer: 0
   m_Name: Muro_0 (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1412,6 +1412,135 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &684445705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 684445707}
+  - component: {fileID: 684445706}
+  m_Layer: 0
+  m_Name: ShootSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &684445706
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684445705}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5918452f03c7f7b4f8895960bd114f87, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5918452f03c7f7b4f8895960bd114f87, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &684445707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684445705}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2026042859}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &811226318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,7 +1554,7 @@ GameObject:
   - component: {fileID: 811226320}
   m_Layer: 0
   m_Name: Muro_0
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1639,7 +1768,7 @@ GameObject:
   - component: {fileID: 848771610}
   m_Layer: 0
   m_Name: Muro_0 (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1853,7 +1982,7 @@ GameObject:
   - component: {fileID: 855278559}
   m_Layer: 0
   m_Name: Muro_0 (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2216,7 +2345,7 @@ GameObject:
   - component: {fileID: 867577653}
   m_Layer: 0
   m_Name: Muro_0 (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2584,7 +2713,7 @@ GameObject:
   - component: {fileID: 1388541462}
   m_Layer: 0
   m_Name: Muro_0 (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2829,7 +2958,7 @@ GameObject:
   - component: {fileID: 1612409552}
   m_Layer: 0
   m_Name: Muro_0 (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3166,6 +3295,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643404904}
   m_CullTransparentMesh: 1
+--- !u!1 &1933191353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1933191355}
+  - component: {fileID: 1933191354}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1933191354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933191353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5216843e5b89244f86c509803ed166d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1933191355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933191353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 891.4478, y: 796.6208, z: -10.794812}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2026042859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 333253015006262084, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
@@ -3243,7 +3416,7 @@ GameObject:
   - component: {fileID: 2044782344}
   m_Layer: 0
   m_Name: "Apar\xEAncia"
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3493,6 +3666,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 333253015006262084, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1504490396}
+    - targetCorrespondingSourceObject: {fileID: 333253015006262084, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 684445707}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1201220353442486281, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
       insertIndex: -1
@@ -3534,6 +3710,7 @@ MonoBehaviour:
   bulletSpeed: 8
   gunOffset: {fileID: 1504490396}
   timeBetweenShoots: 0.4
+  shootSound: {fileID: 684445706}
 --- !u!114 &4722392252873553532 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4490026408753723300, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
@@ -3564,6 +3741,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   maxHealth: 100
+  scoreController: {fileID: 0}
+  timeController: {fileID: 0}
   OnDied:
     m_PersistentCalls:
       m_Calls:
@@ -3614,7 +3793,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 3
+          m_FloatArgument: 2
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -3645,7 +3824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb4b18e620775346b96d2947157f7f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invincibilityDuration: 3
+  invincibilityDuration: 2
 --- !u!114 &4722392252873553537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3800,3 +3979,4 @@ SceneRoots:
   - {fileID: 1333498111}
   - {fileID: 2038789846}
   - {fileID: 630511884}
+  - {fileID: 1933191355}

@@ -15,6 +15,9 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]
     private float timeBetweenShoots;
 
+    [SerializeField]
+    private AudioSource shootSound;
+
     private float lastFireTime;
     private bool fireContinuously;
 
@@ -63,8 +66,15 @@ public class PlayerShoot : MonoBehaviour
             
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.linearVelocity = bulletRotation * Vector2.up * bulletSpeed;
+        }
 
-            Debug.Log("Tiro " + (i + 1) + " disparado!");
+        if (shootSound != null)
+        {
+            shootSound.Play();
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource não está atribuído ao script PlayerShoot!");
         }
     }
 }
