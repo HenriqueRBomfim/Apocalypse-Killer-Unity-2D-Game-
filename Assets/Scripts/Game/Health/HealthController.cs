@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class HealthController : MonoBehaviour
 {
@@ -49,6 +50,11 @@ public class HealthController : MonoBehaviour
         if (currentHealth == 0)
         {
             OnDied.Invoke();
+
+            if (gameObject.CompareTag("Player"))
+            {
+                SceneManager.LoadScene(2);
+            }
         }
         else
         {

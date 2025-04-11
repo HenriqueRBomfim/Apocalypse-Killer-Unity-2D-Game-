@@ -27,7 +27,6 @@ public class Bullet : MonoBehaviour
         {
             Debug.Log("Hit wall!");
             Destroy(gameObject);
-            Destroy(collision.gameObject);
         }
     }
 

@@ -435,7 +435,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zombiebasic_0: 8098180769492495132
+      zombiebasic_1: 3747118897404726843
+      zombiebasic_10: -5895769178655502885
+      zombiebasic_11: 3596182070034508001
+      zombiebasic_2: -5303989506795002460
+      zombiebasic_3: 2455323685774036819
+      zombiebasic_4: 6448546132563239755
+      zombiebasic_5: 7548739868137331717
+      zombiebasic_6: 3364240541818455998
+      zombiebasic_7: 41075259805467083
+      zombiebasic_8: -1113150118323005931
+      zombiebasic_9: -963192445142069802
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
