@@ -40,6 +40,12 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = smoothedMovementInput * speed;
     }
 
+    public void StopMovement()
+    {
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+    }
+
     private void RotateInDirectionOfInput()
     {
         if (movementInput != Vector2.zero)

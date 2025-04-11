@@ -1590,6 +1590,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1455887701442097031, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
+      propertyPath: m_Radius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490026408753723300, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4490026408753723300, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
       propertyPath: rotationSpeed
       value: 720
@@ -1607,6 +1615,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1201220353442486281, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4722392252873553535}
+    - targetCorrespondingSourceObject: {fileID: 1201220353442486281, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4722392252873553537}
+    - targetCorrespondingSourceObject: {fileID: 1201220353442486281, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4722392252873553536}
   m_SourcePrefab: {fileID: 100100000, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
 --- !u!1 &4722392252873553529 stripped
 GameObject:
@@ -1629,6 +1643,22 @@ MonoBehaviour:
   bulletSpeed: 8
   gunOffset: {fileID: 1504490396}
   timeBetweenShoots: 0.4
+--- !u!114 &4722392252873553532 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4490026408753723300, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
+  m_PrefabInstance: {fileID: 4722392252873553528}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722392252873553529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d5c01b945ddda40a4012a252182157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &4722392252873553533 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1455887701442097031, guid: 2c5670f881d0c2b41858b2e8f5083107, type: 3}
+  m_PrefabInstance: {fileID: 4722392252873553528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4722392252873553535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1643,6 +1673,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   maxHealth: 100
+  OnDied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4722392252873553532}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4722392252873553530}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4722392252873553533}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4722392252873553537}
+        m_TargetAssemblyTypeName: InvincibilityController, Assembly-CSharp
+        m_MethodName: StartInvincibility
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4722392252873553536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722392252873553529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb4b18e620775346b96d2947157f7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincibilityDuration: 3
+--- !u!114 &4722392252873553537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722392252873553529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bde62563c5a440448de2ba5a6d0a113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5634767094053402959
 PrefabInstance:
   m_ObjectHideFlags: 0
