@@ -17,11 +17,17 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private float minimumLimit = 0.5f;
 
+    [SerializeField]
+    private float startSpawningAt; // Tempo global para começar a spawnar (em segundos)
+
+    [SerializeField]
+    private TimeController timeController; // Referência ao controlador de tempo
+
     private float timeUntilSpawn;
-    private float elapsedTime;
+    private float spawnRateTimer;
 
     private int currentEnemyCount = 0;
-    private const int maxEnemies = 10;
+    private const int maxEnemies = 5;
 
     void Awake()
     {
@@ -30,7 +36,12 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        elapsedTime += Time.deltaTime;
+        float globalTime = timeController.GetElapsedTime();
+
+        if (globalTime < startSpawningAt)
+            return; // Ainda não é hora de spawnar zumbis nesse spawner
+
+        spawnRateTimer += Time.deltaTime;
         timeUntilSpawn -= Time.deltaTime;
 
         if (timeUntilSpawn <= 0 && currentEnemyCount < maxEnemies)
@@ -39,12 +50,13 @@ public class EnemySpawner : MonoBehaviour
             SetTimeUntilSpawn();
         }
 
-        if (elapsedTime >= 1f)
+        if (spawnRateTimer >= 5f)
         {
             AccelerateSpawnRate();
-            elapsedTime = 0f;
+            spawnRateTimer = 0f;
         }
     }
+
 
     private void SpawnEnemy()
     {
