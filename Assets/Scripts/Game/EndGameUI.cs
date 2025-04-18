@@ -15,6 +15,10 @@ public class ScoreData
 
     [JsonProperty("time_survived")]
     public int time_survived;
+
+    [JsonProperty("email")]
+    public string email;
+
 }
 
 
@@ -23,6 +27,8 @@ public class EndGameUI : MonoBehaviour
     [SerializeField] private TMP_Text finalScoreText;
     [SerializeField] private TMP_Text finalTimeText;
     [SerializeField] private TMP_InputField nameInputField;
+    [SerializeField] private TMP_InputField emailInputField;
+    [SerializeField] private TMP_Text aviso;
 
     private int score;
     private int timeInSeconds;
@@ -48,10 +54,23 @@ public class EndGameUI : MonoBehaviour
     public void OnSubmitScore()
     {
         string playerName = nameInputField.text.Trim();
+        string playerEmail = emailInputField.text.Trim();
+
+        aviso.gameObject.SetActive(false);
 
         if (string.IsNullOrEmpty(playerName))
         {
+            aviso.text = "Digite seu nome.";
+            aviso.gameObject.SetActive(true);
             Debug.LogWarning("Nome do jogador está vazio.");
+            return;
+        }
+
+        if (string.IsNullOrEmpty(playerEmail))
+        {
+            aviso.text = "Digite seu email.";
+            aviso.gameObject.SetActive(true);
+            Debug.LogWarning("Email do jogador está vazio.");
             return;
         }
 
@@ -66,6 +85,7 @@ public class EndGameUI : MonoBehaviour
         ScoreData scoreData = new ScoreData
         {
             name = name,
+            email = emailInputField.text.Trim(),
             score = score,
             time_survived = timeInSeconds
         };

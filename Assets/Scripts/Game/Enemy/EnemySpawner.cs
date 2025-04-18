@@ -27,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
     private float spawnRateTimer;
 
     private int currentEnemyCount = 0;
-    private const int maxEnemies = 5;
+    public int maxEnemies = 5;
 
     void Awake()
     {

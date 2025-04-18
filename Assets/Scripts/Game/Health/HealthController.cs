@@ -57,6 +57,13 @@ public class HealthController : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            if (gameObject.CompareTag("Player"))
+            {
+                playerMovement.StopMovement();
+            }
+            else {
+                Destroy(gameObject);
+            }
         }
         if (currentHealth == 0)
         {
