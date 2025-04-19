@@ -335,7 +335,7 @@ MonoBehaviour:
   finalTimeText: {fileID: 1720125464}
   nameInputField: {fileID: 334912990}
   emailInputField: {fileID: 614078316}
-  aviso: {fileID: 0}
+  aviso: {fileID: 2145263091}
 --- !u!1 &297122471
 GameObject:
   m_ObjectHideFlags: 0
@@ -2876,7 +2876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2145263090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2893,8 +2893,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -415.69806, y: -520.17}
-  m_SizeDelta: {x: 173.024, y: 38.268}
+  m_AnchoredPosition: {x: 6.64, y: -520.17}
+  m_SizeDelta: {x: 360.73, y: 38.268}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2145263091
 MonoBehaviour:

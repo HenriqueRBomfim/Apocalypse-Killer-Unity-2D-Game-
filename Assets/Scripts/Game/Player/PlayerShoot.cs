@@ -24,7 +24,13 @@ public class PlayerShoot : MonoBehaviour
     private int shotsPerFire = 1;
     private float elapsedTime = 0f;
     private const float upgradeInterval = 30f;
-    private float spreadAngle = 10f;
+    private float spreadAngle = 20f;
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
 
     void Update()
     {
@@ -49,7 +55,9 @@ public class PlayerShoot : MonoBehaviour
         if (fireContinuously && Time.time - lastFireTime > timeBetweenShoots)
         {
             lastFireTime = Time.time;
+            animator.SetBool("Shoot", true);
             FireBullet();
+            animator.SetBool("Shoot", false);
         }
     }
 
@@ -70,6 +78,7 @@ public class PlayerShoot : MonoBehaviour
 
         if (shootSound != null)
         {
+            shootSound.volume = 0.4f;
             shootSound.Play();
         }
         else

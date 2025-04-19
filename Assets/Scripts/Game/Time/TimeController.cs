@@ -11,7 +11,7 @@ public class TimeController : MonoBehaviour
     public List<GameObject> roomEntrances; // Entrada Sala 2 = index 0, Entrada Sala 3 = index 1, etc.
 
     private int nextRoomIndex = 0; // Índice da próxima porta a ser destruída
-    private float nextUnlockTime = 10f; // Tempo (em segundos) para a próxima porta abrir
+    private float nextUnlockTime = 120f; // Tempo (em segundos) para a próxima porta abrir
 
     void Update()
     {
@@ -39,7 +39,7 @@ public class TimeController : MonoBehaviour
             Debug.Log($"Abrindo Sala {nextRoomIndex + 2}!");
             Destroy(roomEntrances[nextRoomIndex]);
             nextRoomIndex++;
-            nextUnlockTime += 10f; // Próxima porta em mais 2 minutos
+            nextUnlockTime += 120f; // Próxima porta em mais 2 minutos
         }
     }
 }

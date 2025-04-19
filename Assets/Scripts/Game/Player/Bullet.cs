@@ -17,14 +17,12 @@ public class Bullet : MonoBehaviour
     {
         if (collision.GetComponent<EnemyMovement>() != null)
         {
-            Debug.Log("Hit enemy!");
             var enemyHealthController = collision.GetComponent<HealthController>();
             enemyHealthController.TakeDamage(1);
             Destroy(gameObject);
         }
         else if (collision.CompareTag("Wall"))
         {
-            Debug.Log("Hit wall!");
             Destroy(gameObject);
         }
     }

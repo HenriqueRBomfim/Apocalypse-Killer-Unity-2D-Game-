@@ -13,11 +13,13 @@ public class EnemyMovement : MonoBehaviour
     private PlayerAwarenessController playerAwarenessController;
     private Vector2 targetDirection; 
     private float changeDirectionCooldown; 
+    private Animator animator;
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         playerAwarenessController = GetComponent<PlayerAwarenessController>();
         targetDirection = transform.up;
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
@@ -25,6 +27,7 @@ public class EnemyMovement : MonoBehaviour
         UpdateTargetDirection();
         RotateTowardsTarget();
         SetVelocity();
+        animator.SetFloat("linearVelocity", rigidBody.linearVelocity.magnitude);
     }
 
     private void UpdateTargetDirection()

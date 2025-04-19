@@ -399,7 +399,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 10
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -469,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: maxEnemies
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: enemyPrefab
@@ -485,7 +493,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 30
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -922,7 +938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: maxEnemies
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: enemyPrefab
@@ -938,7 +954,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 30
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -1008,7 +1032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: maxEnemies
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: enemyPrefab
@@ -1024,7 +1048,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 20
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -1692,7 +1724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: maxEnemies
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: enemyPrefab
@@ -1708,7 +1740,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 30
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -2108,7 +2148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: maxEnemies
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: enemyPrefab
@@ -2124,7 +2164,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 40
+      value: 480
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -2194,7 +2242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: maxEnemies
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: enemyPrefab
@@ -2210,7 +2258,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 40
+      value: 480
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -6965,7 +7021,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 10
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -8072,6 +8136,14 @@ PrefabInstance:
       propertyPath: timeController
       value: 
       objectReference: {fileID: 191099998}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8168,7 +8240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: maxEnemies
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: enemyPrefab
@@ -8184,7 +8256,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 20
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -8586,7 +8666,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 10
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -8656,7 +8744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: maxEnemies
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: enemyPrefab
@@ -8672,7 +8760,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 20
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -8966,6 +9062,14 @@ PrefabInstance:
       propertyPath: timeController
       value: 
       objectReference: {fileID: 191099998}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9443,7 +9547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: maxEnemies
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: enemyPrefab
@@ -9459,7 +9563,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 20
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -9718,8 +9830,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1548742857}
   - {fileID: 730792409}
+  - {fileID: 1548742857}
   - {fileID: 1947102280}
   - {fileID: 903192867}
   m_Father: {fileID: 2044782344}
@@ -9811,7 +9923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: maxEnemies
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: enemyPrefab
@@ -9827,7 +9939,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 30
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -10111,7 +10231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: maxEnemies
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: enemyPrefab
@@ -10127,7 +10247,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 40
+      value: 480
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -10209,7 +10337,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 10
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -10893,6 +11029,14 @@ PrefabInstance:
       propertyPath: timeController
       value: 
       objectReference: {fileID: 191099998}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11461,7 +11605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: maxEnemies
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: enemyPrefab
@@ -11477,7 +11621,15 @@ PrefabInstance:
       objectReference: {fileID: 191099998}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: startSpawningAt
-      value: 40
+      value: 480
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
       propertyPath: timeToStartSpawning
@@ -11809,6 +11961,14 @@ PrefabInstance:
       propertyPath: timeController
       value: 
       objectReference: {fileID: 191099998}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: maximumSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6333565636035546961, guid: b293b97b3575ebe4aaaab4765bb907b3, type: 3}
+      propertyPath: minimumSpawnTime
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

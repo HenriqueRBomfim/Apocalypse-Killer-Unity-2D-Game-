@@ -11,11 +11,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movementInput;
     private Vector2 smoothedMovementInput;
     private Vector2 movementInputSmoothVelocity;
+    private Animator animator;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -30,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         SetPlayerVelocity();
         RotateTowardsMouse();
+        animator.SetFloat("Speed", rb.linearVelocity.magnitude);
     }
 
     private void SetPlayerVelocity()
