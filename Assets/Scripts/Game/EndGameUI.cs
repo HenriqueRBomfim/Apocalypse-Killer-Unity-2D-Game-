@@ -93,7 +93,7 @@ public class EndGameUI : MonoBehaviour
         string json = JsonConvert.SerializeObject(scoreData);
         Debug.Log("JSON gerado: " + json);
 
-        UnityWebRequest request = new UnityWebRequest("https://www.henriquerochabomfim.com.br/api/score", "POST")
+        UnityWebRequest request = new UnityWebRequest("https://unity-score-api.vercel.app/api/score", "POST")
         {
             uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json)),
             downloadHandler = new DownloadHandlerBuffer()

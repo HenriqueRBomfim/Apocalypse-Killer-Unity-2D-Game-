@@ -6,14 +6,17 @@ public class EnemyScoreAllocator : MonoBehaviour
     private int killScore;
     
     private ScoreController scoreController;
+    private CoinController coinController;
     private void Awake()
     {
         scoreController = FindFirstObjectByType<ScoreController>();
+        coinController = FindFirstObjectByType<CoinController>();
     }
 
     public void AllocateScore()
     {
         scoreController.AddScore(killScore);
-        Debug.Log($"Allocated {killScore} score to player.");
+        coinController.AddCoins(killScore/10);
+        Debug.Log($"Allocated {killScore} score and coins to player.");
     }
 }
