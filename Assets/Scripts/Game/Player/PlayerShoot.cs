@@ -38,7 +38,14 @@ public class PlayerShoot : MonoBehaviour
 
         if (elapsedTime >= upgradeInterval)
         {
-            shotsPerFire++;
+            if (shotsPerFire < 8)
+            {
+                shotsPerFire++;
+                if (shotsPerFire == 8)
+                {
+                    spreadAngle = 180f / (shotsPerFire - 1); // trava o spread para 8 tiros
+                }
+            }
             elapsedTime = 0f;
             Debug.Log("Novo nível de tiros: " + shotsPerFire);
         }
@@ -63,11 +70,13 @@ public class PlayerShoot : MonoBehaviour
 
     private void FireBullet()
     {
-        float initialAngle = -(shotsPerFire - 1) * spreadAngle / 2;
+        // Se shotsPerFire for 8, trava o spreadAngle para não aumentar mais
+        float currentSpread = (shotsPerFire == 8) ? 180f / (shotsPerFire - 1) : spreadAngle;
+        float initialAngle = -(shotsPerFire - 1) * currentSpread / 2;
 
         for (int i = 0; i < shotsPerFire; i++)
         {
-            float angleOffset = initialAngle + (i * spreadAngle);
+            float angleOffset = initialAngle + (i * currentSpread);
             Quaternion bulletRotation = gunOffset.rotation * Quaternion.Euler(0, 0, angleOffset);
 
             GameObject bullet = Instantiate(bulletPrefab, gunOffset.position, bulletRotation);

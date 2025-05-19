@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Networking;
 using System.Collections;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 [System.Serializable]
@@ -18,9 +19,7 @@ public class ScoreData
 
     [JsonProperty("email")]
     public string email;
-
 }
-
 
 public class EndGameUI : MonoBehaviour
 {
@@ -38,19 +37,16 @@ public class EndGameUI : MonoBehaviour
         score = GameManager.Instance.FinalScore;
         float timeElapsed = GameManager.Instance.FinalTime;
 
-        // Calcular minutos e segundos para exibição
         int minutes = Mathf.FloorToInt(timeElapsed / 60);
         int seconds = Mathf.FloorToInt(timeElapsed % 60);
         string formattedTime = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        // Exibir o score final e o tempo na tela
         finalScoreText.text = $"Score Final: {score}";
         finalTimeText.text = $"Tempo Sobrevivido: {formattedTime}";
 
         timeInSeconds = Mathf.FloorToInt(timeElapsed);
     }
 
-    // Essa função é chamada por um botão "Enviar Score"
     public void OnSubmitScore()
     {
         string playerName = nameInputField.text.Trim();
@@ -74,42 +70,75 @@ public class EndGameUI : MonoBehaviour
             return;
         }
 
-        StartCoroutine(SubmitScore(playerName, score, timeInSeconds));
+        StartCoroutine(GetTokenAndSubmitScore(playerName, playerEmail, score, timeInSeconds));
     }
 
-    private IEnumerator SubmitScore(string name, int score, int timeInSeconds)
+    private IEnumerator GetTokenAndSubmitScore(string name, string email, int score, int timeInSeconds)
     {
-        Debug.Log("Enviando score para o servidor...");
-        Debug.Log($"Nome: {name}, Score: {score}, Tempo: {timeInSeconds} segundos");
+        Debug.Log("Solicitando token do servidor...");
 
         ScoreData scoreData = new ScoreData
         {
             name = name,
-            email = emailInputField.text.Trim(),
+            email = email,
             score = score,
             time_survived = timeInSeconds
         };
 
         string json = JsonConvert.SerializeObject(scoreData);
-        Debug.Log("JSON gerado: " + json);
 
-        UnityWebRequest request = new UnityWebRequest("https://unity-score-api.vercel.app/api/score", "POST")
+        // Primeiro: solicitar o token
+        UnityWebRequest tokenRequest = new UnityWebRequest("https://unity-score-api.vercel.app/api/token", "POST")
         {
             uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json)),
             downloadHandler = new DownloadHandlerBuffer()
         };
-        request.SetRequestHeader("Content-Type", "application/json");
+        tokenRequest.SetRequestHeader("Content-Type", "application/json");
 
-        yield return request.SendWebRequest();
+        yield return tokenRequest.SendWebRequest();
 
-        if (request.result == UnityWebRequest.Result.Success)
+        if (tokenRequest.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Erro ao obter token: " + tokenRequest.error);
+            Debug.LogError("Resposta: " + tokenRequest.downloadHandler.text);
+            aviso.text = "Erro ao enviar o score.";
+            aviso.gameObject.SetActive(true);
+            yield break;
+        }
+
+        string tokenJson = tokenRequest.downloadHandler.text;
+        var tokenResponse = JsonConvert.DeserializeObject<Dictionary<string, string>>(tokenJson);
+        if (!tokenResponse.TryGetValue("token", out string token))
+        {
+            Debug.LogError("Token não recebido.");
+            aviso.text = "Erro ao autenticar envio.";
+            aviso.gameObject.SetActive(true);
+            yield break;
+        }
+
+        Debug.Log("Token recebido com sucesso.");
+
+        // Segundo: enviar score com o token
+        UnityWebRequest scoreRequest = new UnityWebRequest("https://unity-score-api.vercel.app/api/score", "POST")
+        {
+            uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json)),
+            downloadHandler = new DownloadHandlerBuffer()
+        };
+        scoreRequest.SetRequestHeader("Content-Type", "application/json");
+        scoreRequest.SetRequestHeader("Authorization", $"Bearer {token}");
+
+        yield return scoreRequest.SendWebRequest();
+
+        if (scoreRequest.result == UnityWebRequest.Result.Success)
         {
             Debug.Log("Score enviado com sucesso!");
         }
         else
         {
-            Debug.LogError("Erro ao enviar o score: " + request.error);
-            Debug.LogError("Resposta do servidor: " + request.downloadHandler.text); // Mostra a mensagem detalhada
+            Debug.LogError("Erro ao enviar score: " + scoreRequest.error);
+            Debug.LogError("Resposta: " + scoreRequest.downloadHandler.text);
+            aviso.text = "Erro ao enviar o score.";
+            aviso.gameObject.SetActive(true);
         }
     }
 }
