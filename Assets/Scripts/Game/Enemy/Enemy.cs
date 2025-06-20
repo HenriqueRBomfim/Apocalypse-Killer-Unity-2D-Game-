@@ -24,11 +24,20 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Enemy died, returning to pool: " + enemyType);
         if (spawner != null)
+        {
             spawner.EnemyDied();
+        }
 
         if (enemyPool != null && !string.IsNullOrEmpty(enemyType))
+        {
             enemyPool.ReturnEnemy(enemyType, gameObject);
+        }
         else
+        {
+            Debug.LogWarning("EnemyPool or enemyType not set, destroying enemy directly.");
+            Debug.LogWarning("Enemy type: " + enemyType);
+            Debug.LogWarning("EnemyPool: " + enemyPool);
             Destroy(gameObject);
+        }
     }
 }

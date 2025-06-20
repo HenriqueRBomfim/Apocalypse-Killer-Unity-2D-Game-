@@ -24,6 +24,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GamePauseManager.IsPaused)
+            return;
         UpdateTargetDirection();
         RotateTowardsTarget();
         SetVelocity();
@@ -32,6 +34,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void UpdateTargetDirection()
     {
+        if (GamePauseManager.IsPaused)
+            return;
         HandlePlayerTargeting();
         HandleRandomDirectionChange();
 

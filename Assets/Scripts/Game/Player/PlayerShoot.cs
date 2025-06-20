@@ -22,9 +22,8 @@ public class PlayerShoot : MonoBehaviour
     private float lastFireTime;
     private bool fireContinuously;
 
-    private int shotsPerFire = 1;
-    private float elapsedTime = 0f;
-    private const float upgradeInterval = 30f;
+    public int shotsPerFire = 1;
+    public int maxShotsPerFire = 8; // Limite público de tiros por disparo
     private float spreadAngle = 20f;
     private Animator animator;
 
@@ -39,22 +38,6 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
-        elapsedTime += Time.deltaTime;
-
-        if (elapsedTime >= upgradeInterval)
-        {
-            if (shotsPerFire < 8)
-            {
-                shotsPerFire++;
-                if (shotsPerFire == 8)
-                {
-                    spreadAngle = 180f / (shotsPerFire - 1); // trava o spread para 8 tiros
-                }
-            }
-            elapsedTime = 0f;
-            Debug.Log("Novo nível de tiros: " + shotsPerFire);
-        }
-
         if (Input.GetKey(KeyCode.Space) || Mouse.current.leftButton.isPressed)
         {
             fireContinuously = true;
@@ -107,6 +90,15 @@ public class PlayerShoot : MonoBehaviour
         yield return new WaitForSeconds(1f);
         animator.SetBool("Shoot", false);
     }
-    
-}
 
+    // Método para tentar aumentar shotsPerFire respeitando o limite
+    public bool TryUpgradeShotsPerFire()
+    {
+        if (shotsPerFire < maxShotsPerFire)
+        {
+            shotsPerFire++;
+            return true;
+        }
+        return false;
+    }
+}

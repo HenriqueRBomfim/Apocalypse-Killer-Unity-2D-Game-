@@ -70,9 +70,5 @@ public class EnemyPool : MonoBehaviour
             enemy.SetActive(false);
             pools[enemyType].Enqueue(enemy);
         }
-        else
-        {
-            Destroy(enemy);
-        }
     }
 }
