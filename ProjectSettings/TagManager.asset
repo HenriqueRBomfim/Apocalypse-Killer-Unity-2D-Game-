@@ -7,6 +7,7 @@ TagManager:
   - "Colet\xE1vel"
   - Wall
   - Coin
+  - Enemy
   layers:
   - Default
   - TransparentFX

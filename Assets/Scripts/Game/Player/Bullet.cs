@@ -5,6 +5,9 @@ public class Bullet : MonoBehaviour
     private Camera _camera;
     private BulletPool bulletPool;
 
+    [Header("Bullet Damage")]
+    public int damage = 1; // Defina o dano da Bullet aqui
+
     public void SetPool(BulletPool pool)
     {
         bulletPool = pool;
@@ -25,7 +28,7 @@ public class Bullet : MonoBehaviour
         if (collision.GetComponent<EnemyMovement>() != null)
         {
             var enemyHealthController = collision.GetComponent<HealthController>();
-            enemyHealthController.TakeDamage(1);
+            enemyHealthController.TakeDamage(damage); // Usa o valor de dano configurado
             ReturnToPoolOrDestroy();
         }
         else if (collision.CompareTag("Wall"))
