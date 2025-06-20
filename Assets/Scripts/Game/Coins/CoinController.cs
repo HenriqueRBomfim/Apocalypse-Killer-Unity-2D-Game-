@@ -4,44 +4,42 @@ using UnityEngine.Events;
 public class CoinController : MonoBehaviour
 {
     public UnityEvent OnCoinsChanged;
-    public int coins = 0; // Number of coins collected
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int coins = 0; // Número de moedas coletadas
+
     void Start()
     {
-        // Initialize coins to 0 at the start of the game
         coins = 0;
     }
 
-    // Method to add coins
-    public void AddCoins(int amount)
-    {
-        coins += amount; // Increase the coin count by the specified amount
-        OnCoinsChanged.Invoke();
-    }
-
-    // Method to get the current coin count
+    // Método para obter a quantidade atual de moedas
     public int GetCoins()
     {
-        return coins; // Return the current coin count
+        return coins;
     }
 
-    // Method to check if the player has enough coins
+    // Método para verificar se o jogador tem moedas suficientes
     public bool HasEnoughCoins(int amount)
     {
-        return coins >= amount; // Return true if the player has enough coins, false otherwise
+        return coins >= amount;
     }
 
-    // Method to spend coins
+    // Método para gastar moedas
     public void SpendCoins(int amount)
     {
-        if (HasEnoughCoins(amount)) // Check if the player has enough coins
+        if (HasEnoughCoins(amount))
         {
-            coins -= amount; // Deduct the specified amount from the coin count
+            coins -= amount;
             OnCoinsChanged.Invoke();
         }
         else
         {
-            Debug.Log("Not enough coins!"); // Log a message if there are not enough coins
+            Debug.Log("Not enough coins!");
         }
+    }
+
+    public void AddCoins(int amount)
+    {
+        coins += amount;
+        OnCoinsChanged.Invoke();
     }
 }

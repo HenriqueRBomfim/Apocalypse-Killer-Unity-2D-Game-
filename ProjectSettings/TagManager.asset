@@ -6,6 +6,7 @@ TagManager:
   tags:
   - "Colet\xE1vel"
   - Wall
+  - Coin
   layers:
   - Default
   - TransparentFX

@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      apocalypse killer_0: 5999740458705718348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

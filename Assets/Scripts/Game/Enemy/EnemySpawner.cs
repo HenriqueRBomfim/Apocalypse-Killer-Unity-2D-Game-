@@ -3,7 +3,10 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject enemyPrefab;
+    private string enemyType; // Nome do tipo de inimigo para o pool
+
+    [SerializeField]
+    private EnemyPool enemyPool; // Referência ao EnemyPool
 
     [SerializeField]
     private float minimumSpawnTime = 2f;
@@ -57,14 +60,26 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-
     private void SpawnEnemy()
     {
-        GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-        
-        enemy.AddComponent<Enemy>().SetSpawner(this);
+        if (enemyPool == null)
+        {
+            Debug.LogWarning("EnemyPool não atribuído ao EnemySpawner!");
+            return;
+        }
 
-        currentEnemyCount++;
+        GameObject enemy = enemyPool.GetEnemy(enemyType, transform.position, Quaternion.identity);
+
+        if (enemy != null)
+        {
+            Enemy enemyScript = enemy.GetComponent<Enemy>();
+            if (enemyScript != null)
+            {
+                enemyScript.SetPool(enemyPool, enemyType);
+                enemyScript.SetSpawner(this); // Se você tiver esse método para notificar o spawner
+            }
+            currentEnemyCount++;
+        }
     }
 
     private void SetTimeUntilSpawn()

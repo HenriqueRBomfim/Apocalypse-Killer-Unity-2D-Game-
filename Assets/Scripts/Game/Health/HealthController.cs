@@ -62,7 +62,7 @@ public class HealthController : MonoBehaviour
                 playerMovement.StopMovement();
             }
             else {
-                Destroy(gameObject);
+                GetComponent<Enemy>().Die();
             }
         }
         if (currentHealth == 0)

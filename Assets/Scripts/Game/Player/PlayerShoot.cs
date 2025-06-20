@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField]
     private GameObject bulletPrefab;
-    
+
     [SerializeField]
     private float bulletSpeed;
 
@@ -27,6 +28,10 @@ public class PlayerShoot : MonoBehaviour
     private float spreadAngle = 20f;
     private Animator animator;
 
+    [SerializeField]
+    private BulletPool bulletPool;
+    private Coroutine shootCoroutine;
+
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -34,7 +39,7 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
-        elapsedTime += Time.deltaTime; 
+        elapsedTime += Time.deltaTime;
 
         if (elapsedTime >= upgradeInterval)
         {
@@ -62,15 +67,15 @@ public class PlayerShoot : MonoBehaviour
         if (fireContinuously && Time.time - lastFireTime > timeBetweenShoots)
         {
             lastFireTime = Time.time;
-            animator.SetBool("Shoot", true);
+            if (shootCoroutine != null)
+                StopCoroutine(shootCoroutine);
+            shootCoroutine = StartCoroutine(ShootAnimationCoroutine());
             FireBullet();
-            animator.SetBool("Shoot", false);
         }
     }
 
     private void FireBullet()
     {
-        // Se shotsPerFire for 8, trava o spreadAngle para não aumentar mais
         float currentSpread = (shotsPerFire == 8) ? 180f / (shotsPerFire - 1) : spreadAngle;
         float initialAngle = -(shotsPerFire - 1) * currentSpread / 2;
 
@@ -79,15 +84,15 @@ public class PlayerShoot : MonoBehaviour
             float angleOffset = initialAngle + (i * currentSpread);
             Quaternion bulletRotation = gunOffset.rotation * Quaternion.Euler(0, 0, angleOffset);
 
-            GameObject bullet = Instantiate(bulletPrefab, gunOffset.position, bulletRotation);
-            
+            GameObject bullet = bulletPool.GetBullet(gunOffset.position, bulletRotation);
+
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.linearVelocity = bulletRotation * Vector2.up * bulletSpeed;
         }
 
         if (shootSound != null)
         {
-            shootSound.volume = 0.4f;
+            shootSound.volume = 0.2f;
             shootSound.Play();
         }
         else
@@ -95,4 +100,13 @@ public class PlayerShoot : MonoBehaviour
             Debug.LogWarning("AudioSource não está atribuído ao script PlayerShoot!");
         }
     }
+
+    private IEnumerator ShootAnimationCoroutine()
+    {
+        animator.SetBool("Shoot", true);
+        yield return new WaitForSeconds(1f);
+        animator.SetBool("Shoot", false);
+    }
+    
 }
+
