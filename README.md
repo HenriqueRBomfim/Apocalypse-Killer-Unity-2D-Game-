@@ -57,3 +57,5 @@ Shot Sound Effect by <a href="https://pixabay.com/users/mrfriends-45509135/?utm_
   - **2.7.2.** Criar uma nova arena ou modificar a arena básica ✅
   
   - **2.7.3.** Adicionar novos desafios para o jogador ✅
+
+Just a test
